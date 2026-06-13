@@ -193,6 +193,12 @@ session at the end of any run made it immediately clear what happened at
 every step — especially useful when tracking down the state-passing bug
 during testing.
 
+**Where implementation diverged from spec:**
+The spec described size matching as exact equality. During testing I discovered 
+"M" wouldn't match "S/M" in the data, so I changed it to substring matching 
+(`size.lower() in item["size"].lower()`). The spec was wrong about the data 
+— implementation taught me that.
+
 ---
 
 ## AI Tool Usage
